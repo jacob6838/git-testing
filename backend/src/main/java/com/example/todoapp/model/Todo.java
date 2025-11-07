@@ -26,7 +26,7 @@ public class Todo {
         this.completed = completed;
     }
     
-    
+
     public Long getId() {
         return id;
     }
@@ -36,11 +36,9 @@ public class Todo {
         this.id = id;
     }
 
-
     public String getTitle() {
         return title;
     }
-
 
     public void setTitle(String title) {
         this.title = title;
