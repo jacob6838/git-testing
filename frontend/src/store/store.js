@@ -3,12 +3,15 @@ import { setupListeners } from '@reduxjs/toolkit/query';
 import todosReducer from '../features/todos/todosSlice';
 import { todosApi } from '../features/todos/todosApi';
 
-// Custom middleware for logging actions
+// Custom middleware for logging actions (only in development)
 const loggerMiddleware = (store) => (next) => (action) => {
-  console.log('Dispatching action:', action);
-  const result = next(action);
-  console.log('New state:', store.getState());
-  return result;
+  if (process.env.NODE_ENV === 'development') {
+    console.log('Dispatching action:', action);
+    const result = next(action);
+    console.log('New state:', store.getState());
+    return result;
+  }
+  return next(action);
 };
 
 export const store = configureStore({

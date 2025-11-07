@@ -72,14 +72,19 @@ A full-stack todo list application built with React, Redux Toolkit, RTK Query fo
    cd backend
    ```
 
-2. Build and run the Spring Boot application:
+2. (Optional) Configure CORS in `src/main/resources/application.properties`:
+   ```properties
+   cors.allowed.origins=http://localhost:3000
+   ```
+
+3. Build and run the Spring Boot application:
    ```bash
    mvn spring-boot:run
    ```
 
    The backend will start on `http://localhost:8080`
 
-3. (Optional) Access H2 Console:
+4. (Optional) Access H2 Console:
    - URL: `http://localhost:8080/h2-console`
    - JDBC URL: `jdbc:h2:mem:tododb`
    - Username: `sa`
@@ -92,12 +97,17 @@ A full-stack todo list application built with React, Redux Toolkit, RTK Query fo
    cd frontend
    ```
 
-2. Install dependencies:
+2. (Optional) Configure API URL in `.env` file:
+   ```
+   REACT_APP_API_URL=http://localhost:8080/api
+   ```
+
+3. Install dependencies:
    ```bash
    npm install
    ```
 
-3. Start the development server:
+4. Start the development server:
    ```bash
    npm start
    ```
