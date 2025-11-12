@@ -15,7 +15,7 @@ export const todosApi = createApi({
       query: (id) => `/todos/${id}`,
       providesTags: (result, error, id) => [{ type: 'Todo', id }],
     }),
-    // adding comments for clarity
+    // adding comments for clarity and conflicts!!
     addTodo: builder.mutation({
       query: (todo) => ({
         url: '/todos',
