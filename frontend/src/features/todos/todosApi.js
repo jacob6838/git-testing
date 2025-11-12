@@ -11,6 +11,7 @@ export const todosApi = createApi({
       query: () => '/todos',
       providesTags: ['Todo'],
     }),
+    // feature 5
     getTodoById: builder.query({
       query: (id) => `/todos/${id}`,
       providesTags: (result, error, id) => [{ type: 'Todo', id }],
