@@ -15,6 +15,7 @@ export const todosApi = createApi({
       query: (id) => `/todos/${id}`,
       providesTags: (result, error, id) => [{ type: 'Todo', id }],
     }),
+    // adding comments for clarity
     addTodo: builder.mutation({
       query: (todo) => ({
         url: '/todos',
@@ -32,6 +33,7 @@ export const todosApi = createApi({
       }),
       invalidatesTags: (result, error, { id }) => [{ type: 'Todo', id }],
     }),
+    // adding more comments for clarity
     deleteTodo: builder.mutation({
       query: (id) => ({
         url: `/todos/${id}`,
