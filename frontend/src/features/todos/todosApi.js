@@ -23,6 +23,7 @@ export const todosApi = createApi({
       }),
       invalidatesTags: ['Todo'],
     }),
+    // adding comment feature 3
     updateTodo: builder.mutation({
       query: ({ id, ...todo }) => ({
         url: `/todos/${id}`,
